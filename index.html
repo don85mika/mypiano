@@ -841,7 +841,7 @@ class Staff {
       if (g.dots) { const onLine = (n.sp.dia - (g.staff === 'T' ? 30 : 18)) % 2 === 0; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(hx + rx * 1.8, yy - (onLine ? s * 0.5 : 0), s * 0.16, 0, 7); ctx.fill(); }
       let ax = hx - rx * 1.25;
       if (o.names) {
-        const lbl = shortName(n.m, o.fifths || 0).replace(/[♯♭]/, ''); ctx.font = `600 ${Math.round(s * 0.95)}px system-ui`;
+        const lbl = shortName(n.m, o.fifths || 0); ctx.font = `600 ${Math.round(s * 0.95)}px system-ui`;
         const w = ctx.measureText(lbl).width; const lx = hx - rx - s * 0.25 + (n.shift < 0 ? 0 : 0);
         ctx.fillStyle = C.paper; ctx.fillRect(lx - w - 2, yy - s * 0.55, w + 3, s * 1.1);
         ctx.fillStyle = col; ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillText(lbl, lx, yy + 0.5); ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
